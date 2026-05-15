@@ -1,0 +1,228 @@
+:root {
+    --bg: #121212;
+    --surface: rgba(255, 255, 255, 0.05);
+    --surface-strong: rgba(255, 255, 255, 0.11);
+    --text: #FFFFFF;
+    --muted: rgba(255, 255, 255, 0.72);
+    --accent: #1DB954;
+    --accent-soft: rgba(29, 185, 84, 0.18);
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background: radial-gradient(circle at top left, rgba(29, 185, 84, 0.15), transparent 22%),
+                radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.06), transparent 18%),
+                var(--bg);
+    color: var(--text);
+}
+
+.container {
+    width: min(1100px, 100% - 2rem);
+    margin: 0 auto;
+}
+
+.header,
+.footer {
+    background: rgba(18, 18, 18, 0.96);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+}
+
+.hero-section {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.hero-section h1,
+.section-title,
+.artist-card h3,
+.artist-bio h3,
+.footer p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    margin: 0 0 1rem;
+    letter-spacing: -0.04em;
+}
+
+.hero-section p {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.05rem;
+    margin: 0 auto 2rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(29, 185, 84, 0.28);
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.16), rgba(29, 185, 84, 0.08));
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(29, 185, 84, 0.22);
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+.section-title {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    margin-bottom: 1.5rem;
+}
+
+.artists-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.artist-card,
+.artist-bio {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 1.8rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+.card-badge {
+    display: inline-flex;
+    padding: 0.4rem 0.85rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.artist-card h3,
+.artist-bio h3 {
+    margin: 0 0 0.85rem;
+    font-size: 1.55rem;
+}
+
+.artist-card p,
+.artist-bio p,
+.footer p,
+ul {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    padding: 1.5rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--muted);
+}
+
+ul {
+    padding-left: 1.3rem;
+    margin: 1rem 0 0;
+}
+
+li {
+    margin-bottom: 0.65rem;
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
